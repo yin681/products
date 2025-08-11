@@ -1,0 +1,15 @@
+/* 產品圖片 */
+.product-row{
+display: flex;
+ flex-wrap: wrap; /*自動換行 */
+margin-left:-4px;
+margin-right:-4px;
+}
+.product-col{
+width:calc(100%/12*6);/* 佔據6個欄位寬 */
+padding-left:4px;
+padding-right:4px;
+}
+.list-primary{
+    color: var(--primary-400);
+}

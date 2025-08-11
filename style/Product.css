@@ -1,0 +1,89 @@
+/* 顏色 */
+:root{
+    --primary-400: #57A203; /* 主色 */
+    --secondary-color: #F5FEE7; /* 次色 */
+    --text-color: #000000; /* 文字顏色 */
+    --background-color: #ffffff; /* 背景顏色 */
+    --footer-background-color: lightgray; /* 頁腳背景顏色 */
+
+    --100-color: #f8f9fa;
+    --300-color: #dee2e6;
+    --600-color: #6c657d;
+    --900-color: #212529;  /* 主色100% */
+    
+}
+
+    /* 標籤基本樣式 */
+ /* 確保所有元素的寬高計算方式一致 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+/* 產品圖片 */
+.product-row{
+display: flex;
+flex-wrap: wrap; /*自動換行 */
+margin-left:-4px;
+margin-right:-4px;
+}
+.product-col{
+width:calc(100%/12*6);/* 佔據6個欄位寬 */
+padding-left:4px;
+padding-right:4px;
+}
+.list-primary{
+    color: var(--primary-400);
+}
+.del-price
+{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--neutral-500);
+    padding-left: 8px;
+}
+.product-color{
+    width: 64px;
+    text-align: center;
+    color: var(--600-color);
+}
+/* 產品尺寸 */
+.btn-product-size{
+    border:  1px solid var(--300-color);
+    width: 160px;
+  
+}
+.btn-product-size:hover,
+.btn-product-size.active-border {
+  border-color: var(--900-color);
+}
+.text-danger{
+    color: #D74F4F;
+}
+.btn-light{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--900-color);
+}
+.btn-dark{
+    color: var(--background-color);
+    background-color: var(--900-color);
+    border: 1px solid var(--900-color);
+}
+.product-action{
+   display: flex;
+   gap: 8px; /* 元素間距 */
+}
+.product-action .btn{
+    width: 50%;
+}
+.product-action .bi{
+    padding-right: 8px; ;
+}
+.product-info-item p{
+    color: var(--600-color);
+}
+.product-info-item{
+    border-bottom: var(--300-color) 1px solid;
+}

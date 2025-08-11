@@ -1,0 +1,496 @@
+/* 引入字體 */
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul ,li{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 全域樣式 */
+
+
+/* 顏色 */
+:root{
+    --primary-400: #57A203; /* 主色 */
+    --secondary-color: #F5FEE7; /* 次色 */
+    --text-color: #000000; /* 文字顏色 */
+    --background-color: #ffffff; /* 背景顏色 */
+    --footer-background-color: lightgray; /* 頁腳背景顏色 */
+
+    --100-color: #f8f9fa;
+    --300-color: #dee2e6;
+    --600-color: #6c657d;
+    --900-color: #212529;  /* 主色100% */
+}
+
+    /* 標籤基本樣式 */
+ /* 確保所有元素的寬高計算方式一致 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5; /* 設定行高150 */
+  letter-spacing: 0.05em; /* 設定字母間距 */
+  color: var(--900-color);
+}
+
+.hero-header {
+  color: rgb(255, 255, 255); /* 渐變色 */
+  background-image: url("hero.png");
+  background-repeat: no-repeat;/* 不重複背景圖片 */
+  background-position: center center;
+  background-size: cover; /* 設定背景圖片尺寸 */
+}
+
+.hero-opacity {
+  text-align: center;
+  padding-top: 151px;
+  padding-bottom: 151px;
+  background-color: rgba(61, 61, 61, 0.108);
+
+}
+img{
+  vertical-align: middle; /* 圖片垂直對齊 */
+  max-width: 100%;
+  height: auto;
+}
+p{
+  font-size: 16px;
+}
+a{
+   text-decoration: none;
+   display: block;
+   color: #000;
+}   
+
+
+/*通用樣式?? */
+
+.container{
+    width: 1296px;
+    margin: 0 auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right:-12px;
+  margin-left:-12px;
+  /* 因為padding設定，導致左右會被多推12px，因此要向內各推12 */
+}
+.col-1{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12);
+}
+.col-2{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*2);/* 佔據2個欄位寬 */
+}
+.col-3{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*3);/* 佔據3個欄位寬 */
+}
+.col-4{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*4);/* 佔據4個欄位寬 */
+}
+.col-5{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*5);/* 佔據5個欄位寬 */
+}
+.col-6{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*6);/* 佔據6個欄位寬 */
+}
+.col-7{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*7);/* 佔據7個欄位寬 */
+}
+.col-8{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*8);/* 佔據8個欄位寬 */
+}
+.col-9{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*9);/* 佔據9個欄位寬 */
+}
+.col-10{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*10);/* 佔據10個欄位寬 */
+}
+.col-11{
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+  width: calc(100%/12*11);/* 佔據11個欄位寬 */
+}
+.col-12{
+  width: 100%;
+  padding-left: 12px;/* 欄位向左推 */
+  padding-right: 12px;/* 欄位向右推 */
+}
+.d-flex{
+    display: flex; /* 使用flex布局 */
+}
+.justify-between{
+    justify-content: space-between; /* 兩端對齊 */
+}
+.justify-center{
+    justify-content: center; /* 置中對齊 */
+}
+.align-center{
+    align-items: center;/* 交錯軸置中對齊 */
+}
+.flex-wrap{
+    flex-wrap: wrap;/* 換行 */
+}
+
+.gap-8{
+    gap: 8px; /* 元素間距 */
+}
+
+.h1{
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體 */
+}
+.h2{
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體 */
+}
+.h3{
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體 */
+}
+.h4{
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體400 */
+}
+.h5{
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體 */
+    
+}
+.h6{
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 700; /* 粗體 */
+    
+}
+.md{
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 500; /* 粗體 */
+    
+}
+.text-sm{
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    font-weight: 400; /*粗體*/
+    color: #6C757D;
+    
+}
+.text-Primary-400{
+    color: var(--primary-400);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+.bg-Primary-100{
+    background-color: var(--secondary-color);
+   
+}
+
+
+/*調整元素與元素間的距離，向外推擠48px*/
+.mt-64{
+  margin-top:64px;
+}
+.mt-12{
+  margin-top:12px;
+}
+.mb-48{
+    margin-bottom: 48px;
+}
+.mb-4{
+    margin-bottom: 4px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+.mb-12{
+    margin-bottom: 12px;
+}
+.mb-16{
+    margin-bottom: 16px;
+}
+.mb-24{
+    margin-bottom: 24px;
+}
+.mb-32{
+    margin-bottom: 32px;
+}
+.mb-40{
+    margin-bottom: 40px;
+}
+.mb-48{
+    margin-bottom: 48px;
+}
+.me-8{
+margin-right: 8px;
+}
+.me-12{
+margin-right: 12px;
+}
+.me-40{
+margin-right: 40px;
+}
+.me-48{
+  margin-right: 48px;
+}
+.pb-24{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.p-12{
+padding: 12px;
+}
+.p-32{
+padding: 32px;
+}
+.pe-8{
+    padding-right: 8px;
+}
+.pe-4{
+    padding-right: 4px;
+}
+.pb-4{
+  padding-bottom: 4px;
+}
+.pb-8{
+  padding-bottom: 8px;
+}
+.pb-32{
+  padding-bottom: 32px;
+}
+.pb-48{
+  padding-bottom: 48px;
+}
+.mt-48{
+  margin-top: 48px;
+}
+.ml-24{
+margin-left :24px ;
+}
+.pl-8{
+padding-left: 8px;
+}
+.py-8{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.py-64{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.pb-64{
+    padding-bottom: 64px;
+}
+.py-12{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.py-24{
+    padding-top: 24px;
+    
+}
+.py-32{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.py-48{
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+/*padg*/
+.text-white{
+    color: #ffffff;
+}
+.eng-title{
+  font-size: 28px;
+
+}
+.quote{
+  border-radius: 12px;/* 圓角 */
+  text-align: center;
+}
+.photo img{
+ width:1076px;
+  margin-left: -110px;
+  margin-right: -110px;
+}
+
+.section-lined{
+  border-bottom: 1px solid var(--300-color);
+  padding-bottom: 48px;
+}
+.history{
+ border-left: 1px solid var(--900-color);
+ padding-left:8px;
+}
+.history-list{
+  list-style-type: disc; /* 使用圓點列表 */
+  padding-left: 24px; /* 調整列表項目的左側間距 */
+}
+.concept-item{
+  border-left: 3px solid var(--300-color);
+  padding-left: 12px;
+}
+.border-underline{
+  border-bottom: 1px solid var(--300-color);
+  padding-bottom: 8px;
+}
+.bi {
+   padding-right: 8px;/* 調整圖示與文字之間的間距 */
+   vertical-align: bottom; /* 確保圖示與文字對齊 */
+}
+.bg-100{
+  background-color: var(--100-color);
+  height: 174px;
+}
+.footer{
+  text-align: center;
+  background-color: #e8fec5;
+  height: 96px;
+  justify-content: center;  
+  align-items: center;  
+}
+.footer-gray {
+  text-align: center;
+  background-color: #F8F9FA;
+  height: 278px;
+  justify-content: center;  
+  align-items: center;  
+}
+
+.breadcrumb-item{
+  display:flex;
+  font-weight: 500;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+content:'/'; 
+padding:0 12px;
+color: var(--300-color);
+font-weight: 700;
+}
+.breadcrumb-link{
+  color: var(--600-color)
+}
+.btn{
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  border-style: none;
+  background-color:transparent;
+}
+.active{
+  background-color: #C0FA73
+  
+}
+.page.btn{
+  padding: 8px 15px;
+  border-radius: 0;
+  font-weight: 500;
+}
+.footer .btn {
+  width: 115px;
+  height: 48px;
+  background: var(--900-color);
+  color: var(--100-color);
+  padding: 12px 24px ;
+}
+.footer-page {
+  display: flex;
+  align-items: center;     /* 垂直置中 */
+  padding: 16px 0;         /* 上下內距 */
+  justify-content: space-between;
+  border-bottom: 1px solid #DEE2E6;
+  
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px; /* 或用 ml-40 讓兩個連結間距拉開 */
+}
